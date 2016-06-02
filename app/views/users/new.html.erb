@@ -1,0 +1,29 @@
+<% provide(:title, 'Registrarse') %>
+<%= javascript_include_tag 'userform', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag 'signup', media: 'all', 'data-turbolinks-track' => true %>
+<h1>Registrarse</h1>
+
+
+  <div class="col-form">
+    <%= form_for(@user) do |f| %>
+     <%= render 'shared/error_messages' %>
+      <%= f.label :nombre %>
+      <%= f.text_field :name, class: 'form-control', id: 'name_form' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control', id: 'email_form' %>
+
+      <%= f.label :contraseña %>
+      <%= f.password_field :password, class: 'form-control', id: 'password_form' %>
+
+      <%= f.label :pregunta_secreta %>
+      <%= f.text_field :question, class: 'form-control', id: 'question_form' %>
+
+      <%= f.label :respuesta %>
+      <%= f.text_field :answer, class: 'form-control', id: 'answer_form' %>
+
+
+      <%= f.submit "Create my account", class: "btn btn-primary", id: "user_form" %>
+    <% end %>
+  
+</div>

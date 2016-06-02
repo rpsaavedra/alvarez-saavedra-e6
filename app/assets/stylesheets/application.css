@@ -1,0 +1,625 @@
+/**
+
+Para las pestañas se uso de referencia el tutorial otorgado por 
+esta página: http://sinlevantar.blogspot.cl/2012/11/tabs-menu-de-contenidos-con-pestanas.html
+
+**/
+
+html {
+  /* esto hace que siempre este toda la altura disponible */
+  height: 100%;
+
+}
+body {
+  
+  height: 100%;
+  background: white;
+  margin: 0;
+  
+}
+
+main {
+  background: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;;	
+}
+main:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+title{
+	color: red;
+}
+
+
+header {
+	display: block;
+	height:  70px;
+	margin-bottom: 6px;
+}
+
+.logo{
+	float: top;
+	width: max-width;
+	background-color: #494669;
+	height: 100%;
+	border-bottom: 3px solid #1B173C;
+	margin-bottom: 3px;
+
+}
+
+.div-logo-imagen{
+	float: left;
+	background-color: blue;
+	width: 20%;
+	height: 100%;
+	background-image: url('/assets/logo-73da6862cd5db86d066309c3dff6712541a4c8c6a9067baf3c60e3aab8275fdb.png');
+	
+    background-size: 100% 100%;
+}
+
+.logo-imagen{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.div-logo-title{
+	float: left;
+
+	width: 80%;
+	height: 100%;
+	background-color: #494669;
+	
+}
+
+.div-logo-title ul{
+	float: right;
+
+	width: 80%;
+	height: 100%;
+	background-color: #494669;
+	
+}
+
+
+.div-logo-title ul li{
+	float: right;
+	list-style: none;
+	width: 15%;
+	height: 100%;
+	background-color: #494669;
+	
+}
+
+.sesioner{
+	margin-right: 20px;
+}
+
+
+.sesionx li :link{
+	color: #000;
+	font-size: 20px;
+}
+
+.sesionx li :visited { 
+    color: #000;
+}
+
+.sesionx li :hover { 
+    color: #fff;
+}
+
+#outs :link{
+	border-style: solid;
+	padding: 5px;
+    border-width: 2px;
+}
+
+
+.menu{
+
+	display: block; 
+	float: left;
+	position: absolute;
+	height: 50px;
+	width:100%;
+	background-color: #393B78;
+	vertical-align: center;
+	margin-bottom: 20px;
+}
+
+.link-menu{
+	display: inline-block;
+	float: left;
+	width: auto;
+	height: 40px;
+	background-color: #494669;
+	
+	font-size: 21px;
+	text-align: center;
+	text-decoration: none;
+	color: #FFFFFF;
+
+	margin-top: 0px;
+	margin-right: 1.5px;
+	margin-left: 1.5px;
+
+	padding-left: 15px;
+	padding-top: 10px; 
+	padding-bottom: 0px;
+	padding-right:15px; 
+
+	border-color: #8C8C8E;
+
+	position: relative;
+
+}
+
+#current{
+	color : yellow;
+}
+
+
+.buscador {
+	display: inline-block;
+	float: right;
+	padding-top: 10px; 
+	padding-bottom: 0px;
+	margin-left: 10px;
+	height: 80%;
+
+
+	background-color:  #494669;
+}
+
+#buscar{
+	display: inline-block;
+	float: left;
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 25px;
+	width: 60%;
+
+}
+
+
+#buscar-bot{
+	display: inline-block;
+	float: left;
+	margin-right: 1px;
+	height: 22px;
+	width: auto;
+
+}
+
+.link-menu:hover{
+	background-color: purple;
+	color: white;
+}
+
+
+.contenido{
+	
+	padding: 10px;
+	float: left;
+	width: auto;
+	height: auto;
+	margin-top: 50px;
+
+	height: auto;
+	
+	overflow:visible;
+
+	position: relative;
+
+
+}
+.contenido:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+
+
+
+
+h1 {
+ margin: 1em 0;
+ text-align: center;
+ padding-bottom: 5px;
+ border-bottom: 1px solid black;
+ font-size: 30px;
+}
+
+
+
+#container {
+
+	position: relative;
+ margin: 0 auto;
+ width: auto; /* 90%; *//* Ancho del contenedor */
+ max-width: 90%;
+ height: auto;
+ margin-bottom: 10px;
+ overflow:visible
+}
+#container input {
+ height: 2.5em;
+ display: inline-block;
+ visibility: hidden;
+}
+#container .nav-tab {
+	float: left;
+ background: #f9f9f9; /* Fondo de las pestañas */
+ border-radius: .25em .25em 0 0;
+ color: #888; /* Color del texto de las pestañas */
+ cursor: pointer;
+ display: inline-block;
+ 
+ font-size: 1em; /* Tamaño del texto de las pestañas */
+ height: 2.5em;
+ line-height: 2.5em;
+ margin-right: .25em;
+ padding: 0 1.5em;
+ text-align: center;
+}
+#container input:hover + .nav-tab {
+ background: #ddd; /* Fondo de las pestañas al pasar el cursor por encima */
+ color: #666; /* Color del texto de las pestañas al pasar el cursor por encima */
+}
+#container input:checked + .nav-tab {
+ background: #f1f1f1; /* Fondo de las pestañas al presionar */
+ color: #444; /* Color de las pestañas al presionar */
+ position: relative;
+ z-index: 6;
+}
+
+#content {
+	
+ background: #f1f1f1; /* Fondo del contenido */
+
+
+ border-radius: 0 .25em .25em .25em;
+ min-height: 20em; /* Alto del contenido */
+ position: relative;
+ width: 100%;
+ height: auto;
+ z-index: 5;
+
+ 
+}
+
+
+
+#content div {
+
+ opacity: 0;
+ padding: 1.5em;
+ position: relative;
+ height: auto;
+ z-index: -100;
+}
+
+#content div:after{
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+
+
+#container input#tab-1:checked ~ #content #content-1{
+	 opacity: 1;
+
+ z-index: -200;
+}
+#container input#tab-1:checked ~ #content #content-2{
+ opacity: 0;
+ height: 0px;
+  padding: 0px;
+ overflow: hidden;
+ z-index: -100;
+}
+#container input#tab-1:checked ~ #content #content-3{
+ opacity: 0;
+ height: 0px;
+  padding: 0px;
+ overflow: hidden;
+ z-index: -100;
+}
+
+
+
+#container input#tab-2:checked ~ #content #content-2{
+ opacity: 1;
+
+ z-index: -200;
+}
+#container input#tab-2:checked ~ #content #content-1{
+ opacity: 0;
+ height: 0px;
+  padding: 0px;
+ overflow: hidden;
+ z-index: -100;
+}
+#container input#tab-2:checked ~ #content #content-3{
+ opacity: 0;
+ height: 0px;
+  padding: 0px;
+ overflow: hidden;
+ z-index: -100;
+}
+
+
+#container input#tab-3:checked ~ #content #content-3 {
+ opacity: 1;
+
+ z-index: -200;
+}
+#container input#tab-3:checked ~ #content #content-2 {
+ opacity: 1;
+ padding: 0px;
+ height: 0px;
+ overflow: hidden;
+ z-index: -200;
+}
+#container input#tab-3:checked ~ #content #content-1 {
+ opacity: 1;
+ height: 0px;
+  padding: 0px;
+ overflow: hidden;
+ z-index: -200;
+}
+
+
+
+
+
+.img-cata{
+	width:  270px;
+	height: 300px;
+	
+
+
+}
+
+.prod-cat{
+	display: inline-block;
+	float: left;
+	width: 270px;
+	text-align: center;
+	margin: 60px;
+	padding: 0px;
+}
+
+
+
+
+
+#prodmarc {
+	background-color: #494680;
+	display: none ;
+	opacity: 1;
+	 overflow: hidden;
+
+ 	
+ 	z-index: 1000;
+
+
+}
+#prodsham {
+	background-color: #494680;
+	display: none ;
+	opacity: 1;
+	 overflow: hidden;
+
+ 	
+ 	z-index: 1000;
+
+
+}
+
+#prodsham:hover{
+	background-color: orange;
+	color: white;
+}
+
+#prodmarc:hover{
+	background-color: orange;
+	color: white;
+}
+
+#mostrador {
+	width: 43%;
+	height: 100%;
+
+}
+
+
+#mover{
+	display: block;
+}
+
+#mover div{
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+
+}
+
+#mover a{
+	margin: 5px;
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+
+}
+#mover div a{
+
+	width: auto;
+
+}
+
+.bold {
+  font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 992px) 
+{
+	.link-menu{
+		font-size: 80%;
+	}
+	.buscador{
+
+		padding-top: 8px; 
+		padding-bottom: 0px;
+		height: 80%;
+		width: 240px;
+	}
+	
+	#buscar-bot{
+	
+		font-size: 70%;
+	
+	}
+	
+	.shampoo{
+		max-width:100px;
+		max-height:80px;
+		padding-top: 120px;
+		margin-left: 50px;
+		margin-right: 50px;	
+	}
+	.img-label{
+		font-size : 80%;
+	}
+
+}
+
+@media (max-width: 768px) 
+{
+	.link-menu{
+		font-size: 60%;
+	}
+	.buscador{
+		visibility: hidden;
+		padding-top: 7px; 
+		padding-bottom: 7px;
+		width: 200px;
+	}
+	
+	#buscar{
+	visibility: hidden;
+	margin-left: 10px;
+	margin-right: 15px;
+
+	}
+
+
+	#buscar-bot{
+		visibility: hidden;
+		margin-right: 5px;
+	}
+	.shampoo{
+		max-width:80px;
+		max-height:50px;
+		padding-top: 90px;	
+		margin-left: 35px;
+		margin-right: 35px;	
+	}
+	.img-label{
+		font-size : 65%;
+	}
+	
+}
+
+
+@media (max-width: 480px) 
+{
+
+	main {
+	  background: #FFFFFF;
+	  width: 100%;
+	  min-height: 95%;
+	  position: relative;
+	}
+
+	.div-logo-imagen{
+		width: 70%;
+		height: 100%;
+		
+	}
+
+	.div-logo-title{
+		width: 30%
+	}
+
+	.link-menu{
+		margin-left: 3px;
+		font-size: 100%;
+		width: 26%;
+	}
+	.buscador{
+		visibility: hidden;
+		padding-top: 7px; 
+		padding-bottom: 7px;
+		width: 200px;
+	}
+	
+	#buscar{
+	
+	margin-left: 10px;
+	margin-right: 15px;
+
+	}
+
+
+	#buscar-bot{
+		margin-right: 5px;
+	}
+	.shampoo{
+		max-width:80px;
+		max-height:50px;
+		padding-top: 90px;	
+		margin-left: 35px;
+		margin-right: 35px;	
+	}
+	.img-label{
+		font-size : 65%;
+	}
+	
+}
+
+
+footer{
+	float: left;
+	width: 100%;
+  font-size: 12px;
+  text-align: center;
+  border-top: 1px solid gray;
+  padding-bottom: 20px;
+
+}

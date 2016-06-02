@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Recupera tu contraseña</h1>
+
+	<p>Para reestablecer tu contraseña haz click en el siguiente enlace:</p>
+
+	<%= link_to "Reestablece tu contraseña", edit_pass_reset_url(@user.reset_token,email: @user.email) %>
+
+  </body>
+</html>

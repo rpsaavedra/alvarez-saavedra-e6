@@ -1,0 +1,42 @@
+ul{
+  padding: 0px;
+}
+
+
+.col-header li{
+  font-size: 20px;
+  font-weight: bold;
+  width: 15%;
+  height: auto;
+  padding-left: 5%;
+  display: inline-block;
+}
+.col-header .small-tag{
+  width: 8%;
+}
+
+.item-list li{
+  margin-left: 5%;
+  display: inline-block;
+  width: 15%;
+  max-width: 15%;
+  overflow: auto;
+  margin-top: 1%;
+}
+
+.item-list .small-tag{
+  width: 8%;
+}
+
+
+.item-list .action-tag{
+  float: right;
+  width: auto;
+  margin-left: 0px;
+  margin-right: 1%;
+}
+
+.new_item{
+  margin-left: 5%;
+}
+

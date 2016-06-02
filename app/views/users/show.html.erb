@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<% if (@user.admin == 1) %>
+<p>
+  <strong>Es administrador</strong>
+</p>
+<% end%>
+
+<p>
+  <strong>Estado:</strong>
+  <% if (@user.activated) %>
+	  	Activo
+  <%else%>
+  		Bloqueado
+  <% end%>
+</p>
+
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Volver', :back %>
+
+<% if (logged_in?) %>
+<% if (current_user.admin==1) %>
+<a href="/../admin/usuarios" >Lista de usuarios</a>
+<% end %>
+<% end %>

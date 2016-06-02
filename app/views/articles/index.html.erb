@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track' => true %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de productos</h1>
+
+  <ul class = "col-header">
+      <li>Nombre</li>
+      <li class = "small-tag">Precio</li>
+      <li class = "small-tag">Imagen</li>
+      <li class = "small-tag">Tipo</li>
+      <li class = "small-tag">Stock</li>
+  </ul>
+
+  <ul>
+    <% @articles.each do |article| %>
+      <ul class = "item-list">
+        <li><%= article.name %></li>
+        <li class = "small-tag"><%= article.price %></li>
+        <li class = "small-tag"><%= article.image %></li>
+        <li class = "small-tag"><%= article.kind %></li>
+        <li class = "small-tag"><%= article.stock %></li>
+        <li class="action-tag"><%= link_to 'Detalles', article %></li>
+        <li class="action-tag"><%= link_to 'Editar', edit_article_path(article) %></li>
+        <li class="action-tag"><%= link_to 'Eliminar', article, method: :delete, data: { confirm: 'Estás seguro?' } %></li>
+      </ul>
+    <% end %>
+  </ul>
+
+<br>
+
+
+<% if !(@user.nil?) %>
+  <% if (@user.admin == 1) %>
+    <%= link_to 'New Article', new_article_path , class: "new_item"%>
+  <% end %>
+<% end %>
+

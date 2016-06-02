@@ -1,0 +1,18 @@
+.col-form{
+	float: left;
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%; 
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 18px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+  margin-top: 10px;
+}

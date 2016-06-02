@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de promociones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Stock</th>
+      <th>Prod 1</th>
+      <th>Prod 2</th>
+      <th>Prod 3</th>
+      <th>Prod 4</th>
+      <th>Cant 1</th>
+      <th>Cant 2</th>
+      <th>Cant 3</th>
+      <th>Cant 4</th>
+      <th>Date start</th>
+      <th>Date end</th>
+      <th>Valido</th>
+      <th>Url</th>
+      <th>String otro</th>
+      <th>Int otro</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proms.each do |prom| %>
+      <tr>
+        <td><%= prom.name %></td>
+        <td><%= prom.price %></td>
+        <td><%= prom.image %></td>
+        <td><%= prom.description %></td>
+        <td><%= prom.stock %></td>
+        <td><%= prom.prod_1 %></td>
+        <td><%= prom.prod_2 %></td>
+        <td><%= prom.prod_3 %></td>
+        <td><%= prom.prod_4 %></td>
+        <td><%= prom.cant_1 %></td>
+        <td><%= prom.cant_2 %></td>
+        <td><%= prom.cant_3 %></td>
+        <td><%= prom.cant_4 %></td>
+        <td><%= prom.date_start %></td>
+        <td><%= prom.date_end %></td>
+        <td><%= prom.valido %></td>
+        <td><%= prom.url %></td>
+        <td><%= prom.string_otro %></td>
+        <td><%= prom.int_otro %></td>
+        <td><%= link_to 'Detalles', prom %></td>
+        <td><%= link_to 'Editar', edit_prom_path(prom) %></td>
+        <td><%= link_to 'Eliminar', prom, method: :delete, data: { confirm: 'Estás seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if !(@user.nil?) %>
+  <% if (@user.admin == 1) %>
+    <%= link_to 'New Prom', new_prom_path %>
+  <% end %>
+<% end %>

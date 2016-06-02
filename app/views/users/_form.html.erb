@@ -1,0 +1,47 @@
+<%= javascript_include_tag 'usereditform', 'data-turbolinks-track' => true %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name , id: 'name_form'%>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email , id: 'email_form'%>
+  </div>
+
+
+<% if (current_user.id.to_i == params[:id].to_i) %>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password , id: 'password_form'%>
+  </div>
+<% end %>
+
+<% if (current_admin?) %>
+  <div class="field">
+    <%= f.label :Dar_permisos_de_administrador %><br>
+    <%= f.check_box :admin, id: 'admin_form' %>
+  </div>
+  <div class="field">
+    <%= f.label :usuario_activo %><br>
+    <%= f.check_box :activated, id: 'activated_form' %>
+  </div>
+<% end %>
+
+
+  <div class="actions">
+    <%= f.submit id: 'user_form' %>
+  </div>
+<% end %>

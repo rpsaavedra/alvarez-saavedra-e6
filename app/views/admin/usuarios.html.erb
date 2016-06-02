@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track' => true %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Lista de usuarios</h1>
+
+<ul class = "col-header">
+  <li>Nombre</li>
+  <li>Email</li>
+</ul>
+
+<ul>
+  <% User.all.each do |user| %>
+    <ul class="item-list">
+      <li><%= user.name %></li>
+      <li><%= user.email %></li>
+     
+      <li class="action-tag"><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estás seguro?' } %></li>
+      <li class="action-tag"><%= link_to 'Editar', editar_path(user) %></li>
+      <li class="action-tag"><%= link_to 'Detalles', user %></li>
+    </ul>
+  <% end %>
+  
+</ul>
+
+
+<br>
+
+<%= link_to 'Nuevo Usuario', new_user_path , class: "new_item"%>

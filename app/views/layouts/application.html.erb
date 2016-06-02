@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+    <title>Web <%= yield(:title) %></title>
+    <%= stylesheet_link_tag 'application', media: 'all',
+                                           'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+  		<div class="logo">
+  			<div class="div-logo-imagen"> 
+          		<a href="#" class="logo-imagen" ></a><!--- imagen-->
+  			</div>
+
+  			<div class="div-logo-title">
+           		<nav class="sesionx">
+		          <ul class="sesioner">
+		            <% if logged_in? %>
+		             <li id="outs"><%= link_to "Log out", logout_path, method: "delete" %></li>
+		            <li><%= link_to "Profile", current_user %></li>
+		            <% else %>
+		              <li><%= link_to "Sign up",   signup_path %></li>
+			          <li><%= link_to "Log in", login_path %></li>
+			        <% end %>
+		            <li><%= link_to "Home", root_path %></li>
+		          </ul>
+		        </nav>
+           	</div>
+  		</div>
+    </header>
+    <div class="container">
+      <%= flash[:info] %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

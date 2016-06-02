@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 9.99
+  image: MyString
+  description: MyText
+  stock: 1
+  prod_1: 1
+  prod_2: 1
+  prod_3: 1
+  prod_4: 1
+  cant_1: 1
+  cant_2: 1
+  cant_3: 1
+  cant_4: 1
+  date_start: 2016-05-17
+  date_end: 2016-05-17
+  valido: 1
+  url: MyString
+  string_otro: MyString
+  int_otro: 1
+
+two:
+  name: MyString
+  price: 9.99
+  image: MyString
+  description: MyText
+  stock: 1
+  prod_1: 1
+  prod_2: 1
+  prod_3: 1
+  prod_4: 1
+  cant_1: 1
+  cant_2: 1
+  cant_3: 1
+  cant_4: 1
+  date_start: 2016-05-17
+  date_end: 2016-05-17
+  valido: 1
+  url: MyString
+  string_otro: MyString
+  int_otro: 1

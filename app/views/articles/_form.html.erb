@@ -1,0 +1,44 @@
+<%= javascript_include_tag 'articleform', 'data-turbolinks-track' => true %>
+<%= form_for(@article, multipart: true) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, id: 'name_form'%>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, id: 'price_form' %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :kind %><br>
+     <%= f.select :kind, options_for_select( [["Shampoo ", "shampoo",  {class: "bold"} ], ["H & S", "shampoo!!h&h"], ["Sedal ", "shampoo!!sedal"], ["Pantene ", "shampoo!!pantene"], ["Cuadro ", "cuadrox", {class: "bold"}], ["Cuadro ", "cuadro"]] , disabled: ["shampoo", "cuadrox"])%>
+
+   
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :stock %><br>
+    <%= f.number_field :stock, id: 'stock_form' %>
+  </div>
+  <div class="actions">
+    <%= f.submit id: 'article_form'%>
+  </div>
+<% end %>

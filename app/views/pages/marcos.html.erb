@@ -1,0 +1,77 @@
+<% provide(:title, "Cuadros") %>
+<%= javascript_include_tag 'marcos', 'data-turbolinks-track' => true %>
+
+  		<nav class="menu">
+			<a href="#" class="link-menu" >Inicio</a>
+      <%= link_to "Promociones", promo_path , :class => "link-menu"%>     
+     <div onmouseover="mostrar()" onmouseout="ocultar()" id="mostrador">
+        <a href="" class="link-menu", id = "current" >
+         Catálogos
+           <%= link_to "Shampoo", catal_path , :class => "link-menu", :id => "prodsham"%>
+          <%= link_to "Marcos", marcos_path , :class => "link-menu", :id => "prodmarc"%>
+         </a> 
+       </div>
+			<form class="buscador" action="http://www.google.com" method="options">
+				<input id="buscar" type"search" name="busqueda">
+				<input id="buscar-bot"type="submit" value="buscar">
+			</form>      
+  		</nav>
+
+
+  		  
+
+      <section class="contenido">
+    <p id="notice"><%= notice %></p>
+      <h1 id="tipox">Cuadros</h1>
+
+       <div id="container">
+          
+            <!--Pestaña 1 activa por defecto-->
+            <input id="tab-1" type="radio" name="tab-group" checked="checked" value="1"/>
+                <label class="nav-tab" for="tab-1">Cuadros</label>
+
+
+
+            <!--Contenido a mostrar/ocultar-->
+
+            <div id="content">
+             <!--Contenido de la Pestaña 1-->
+                 <div id="content-1">
+                      
+                                          
+                 </div>
+                
+            </div>
+
+            <nav id="mover">
+
+            <a id="prev" href="#"> Previo </a>
+
+            <div id="numerito">
+              
+
+            </div>
+           
+            <a id="next" href="#"> Siguiente </a>
+            </nav>
+
+
+
+        </div>
+
+        </section>
+
+
+
+
+
+      <footer>
+        <h3>Sitios amigos<h3>
+
+        <a href="#" class="foot">Shapoo</a>
+        <a href="#" class="foot">Marcos</a>
+        <a href="#" class="foot">Marcos de Shapoo</a>
+
+        <h4>Ubicación: Los Cuadros #123</h4>
+
+      </footer>
